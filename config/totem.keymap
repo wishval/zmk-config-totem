@@ -165,6 +165,36 @@
             key-positions = <0 1>;
             timeout-ms = <50>;
         };
+
+  // ── Python / LeetCode combos ──
+
+        // E + R → ==  (comparison, очень частый в Python)
+        double_equals {
+            bindings = <&double_eq>;
+            key-positions = <2 3>;
+            timeout-ms = <30>;
+        };
+
+        // W + E → !=  (not equal)
+        not_equals {
+            bindings = <&not_eq>;
+            key-positions = <1 2>;
+            timeout-ms = <30>;
+        };
+
+        // L + ; → :  (Python colon — if/for/def/class)
+        colon {
+            bindings = <&kp COLON>;
+            key-positions = <18 19>;
+            timeout-ms = <50>;
+        };
+
+        // X + C → #  (Python comment prefix + space)
+        py_comment {
+            bindings = <&hash_space>;
+            key-positions = <22 23>;
+            timeout-ms = <50>;
+        };
     };
 
     // ┌──────────────────────────────────────────────────────────┐

@@ -166,7 +166,7 @@
             timeout-ms = <50>;
         };
 
-  // ── Python / LeetCode combos ──
+        // ── Python / LeetCode combos ──
 
         // E + R → ==  (comparison, очень частый в Python)
         double_equals {
@@ -214,6 +214,27 @@
             #binding-cells = <0>;
             bindings = <&kp MINUS &kp GT>;
             label = "THIN_ARROW";
+        };
+
+        double_eq: double_eq {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp EQUAL &kp EQUAL>;
+            label = "DOUBLE_EQ";
+        };
+
+        not_eq: not_eq {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp EXCL &kp EQUAL>;
+            label = "NOT_EQ";
+        };
+
+        hash_space: hash_space {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp HASH &kp SPACE>;
+            label = "HASH_SPACE";
         };
     };
 

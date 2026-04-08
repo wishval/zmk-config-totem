@@ -80,6 +80,15 @@
             hold-trigger-key-positions = <KEYS_L THUMBS>;
             hold-trigger-on-release;
         };
+
+        ltq: layer_tap_quick {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <175>;
+            bindings = <&mo>, <&kp>;
+        };
     };
 
     // ┌──────────────────────────────────────────────────────────┐
@@ -251,7 +260,7 @@
         // ┃          Q      W      E      R      T                ┃
         // ┃         A/GUI  S/ALT  D/CTL  F/SFT   G                ┃
         // ┃   `      Z      X      C      V      B                ┃
-        // ┃                     DEL/FUN TAB/NUM SPC/NAV            ┃
+        // ┃                     DEL/FUN SPC/NUM TAB/NAV            ┃
         // ┃                                                       ┃
         // ┃          Y      U      I      O      P                ┃
         // ┃          H     J/SFT  K/CTL  L/ALT  ;/GUI             ┃
@@ -265,20 +274,20 @@
                         &kp Q        &kp W        &kp E         &kp R         &kp T               &kp Y        &kp U         &kp I         &kp O        &kp P
                         &hml LGUI A  &hml LALT S  &hml LCTRL D  &hml LSHFT F  &hml LS(LA(LC(LGUI))) G    &hmr RS(RA(RC(RGUI))) H  &hmr RSHFT J  &hmr RCTRL K  &hmr RALT L  &hmr RGUI SEMI
             &kp GRAVE   &kp Z        &kp X        &kp C         &kp V         &kp B               &kp N        &kp M         &kp COMMA     &kp DOT      &kp FSLH        &kp SQT
-                                                  &lt FUN DEL   &lt NUM TAB   &lt NAV SPACE        &lt MED ESC  &lt SYM ENTER &lt MSE BSPC
+                                                  &ltq FUN DEL   &lt NUM SPACE  &lt NAV TAB         &lt MED ESC  &lt SYM ENTER &ltq MSE BSPC
             >;
         };
 
         // ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-        // ┃ NAV — hold Space                                      ┃
+        // ┃ NAV — hold Tab                                        ┃
         // ┃                                                       ┃
         // ┃ Left hand: mods (for Shift+Arrow, Ctrl+Arrow, etc.)   ┃
         // ┃ Right hand: arrows, Home/End, PgUp/PgDn               ┃
         // ┃ Right top row: clipboard (macOS: Cmd+Z/X/C/V)         ┃
         // ┃                                                       ┃
-        // ┃ Text selection: hold Space → hold F(Shift) → arrows   ┃
-        // ┃ Word jump: hold Space → hold D(Ctrl) → ← / →         ┃
-        // ┃ Word select: hold Space → hold D+F → ← / →           ┃
+        // ┃ Text selection: hold Tab → hold F(Shift) → arrows     ┃
+        // ┃ Word jump: hold Tab → hold D(Ctrl) → ← / →           ┃
+        // ┃ Word select: hold Tab → hold D+F → ← / →             ┃
         // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 
         nav_layer {
@@ -292,7 +301,7 @@
         };
 
         // ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-        // ┃ NUM — hold Tab                                        ┃
+        // ┃ NUM — hold Space                                      ┃
         // ┃                                                       ┃
         // ┃ Left hand: numpad layout (7-8-9 top, 1-2-3 bottom)    ┃
         // ┃ Right hand: mods (for Ctrl+1, Shift+5, etc.)          ┃

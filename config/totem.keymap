@@ -45,7 +45,6 @@
 #define THUMBS 32 33 34 35 36 37
 
 / {
-
     // ┌──────────────────────────────────────────────────────────┐
     // │ Timeless bilateral home row mods (urob-style)            │
     // │                                                          │
@@ -64,8 +63,9 @@
             flavor = "balanced";
             tapping-term-ms = <280>;
             quick-tap-ms = <175>;
-            require-prior-idle-ms = <150>;
+            require-prior-idle-ms = <100>;
             bindings = <&kp>, <&kp>;
+
             hold-trigger-key-positions = <KEYS_R THUMBS>;
             hold-trigger-on-release;
         };
@@ -76,8 +76,9 @@
             flavor = "balanced";
             tapping-term-ms = <280>;
             quick-tap-ms = <175>;
-            require-prior-idle-ms = <150>;
+            require-prior-idle-ms = <100>;
             bindings = <&kp>, <&kp>;
+
             hold-trigger-key-positions = <KEYS_L THUMBS>;
             hold-trigger-on-release;
         };
@@ -91,6 +92,7 @@
         compatible = "zmk,combos";
 
         // Q + P → Capslock (переключение языка на macOS)
+
         caps {
             bindings = <&kp CAPSLOCK>;
             key-positions = <0 9>;
@@ -98,6 +100,7 @@
         };
 
         // V + M → _  (underscore)
+
         underscore {
             bindings = <&kp UNDERSCORE>;
             key-positions = <24 27>;
@@ -105,6 +108,7 @@
         };
 
         // Z + / → Caps Word
+
         capsword {
             bindings = <&caps_word>;
             key-positions = <21 30>;
@@ -112,6 +116,7 @@
         };
 
         // T + Y → =>  (fat arrow)
+
         fat_arrow {
             bindings = <&fat_arrow>;
             key-positions = <4 5>;
@@ -119,6 +124,7 @@
         };
 
         // B + N → ->  (thin arrow)
+
         thin_arrow {
             bindings = <&thin_arrow>;
             key-positions = <25 26>;
@@ -126,6 +132,7 @@
         };
 
         // R + U → -  (minus/dash)
+
         minus {
             bindings = <&kp MINUS>;
             key-positions = <3 6>;
@@ -133,6 +140,7 @@
         };
 
         // O + P → [ (= Х в русской раскладке)
+
         ru_ha {
             bindings = <&kp LBKT>;
             key-positions = <8 9>;
@@ -140,6 +148,7 @@
         };
 
         // P + ' → ] (= Ъ в русской раскладке)
+
         ru_hard_sign {
             bindings = <&kp RBKT>;
             key-positions = <9 31>;
@@ -147,6 +156,7 @@
         };
 
         // Tab + Space → Cmd+Tab (переключение приложений)
+
         app_switch {
             bindings = <&kp LG(TAB)>;
             key-positions = <32 33>;
@@ -154,6 +164,7 @@
         };
 
         // \ + Z → Cmd+` (переключение окон внутри приложения)
+
         win_switch {
             bindings = <&kp LG(GRAVE)>;
             key-positions = <20 21>;
@@ -161,6 +172,7 @@
         };
 
         // Q + W → Cmd+Shift+4 (скриншот области)
+
         screenshot {
             bindings = <&kp LG(LS(N4))>;
             key-positions = <0 1>;
@@ -168,8 +180,8 @@
         };
 
         // ── Python / LeetCode combos ──
-
         // E + R → ==
+
         double_equals {
             bindings = <&double_eq>;
             key-positions = <2 3>;
@@ -177,6 +189,7 @@
         };
 
         // W + E → !=
+
         not_equals {
             bindings = <&not_eq>;
             key-positions = <1 2>;
@@ -184,6 +197,7 @@
         };
 
         // L + ; → :
+
         colon {
             bindings = <&kp COLON>;
             key-positions = <18 19>;
@@ -191,6 +205,7 @@
         };
 
         // X + C → #  (Python comment + space)
+
         py_comment {
             bindings = <&hash_space>;
             key-positions = <22 23>;
@@ -263,10 +278,10 @@
         base_layer {
             label = "BASE";
             bindings = <
-                        &kp Q        &kp W        &kp E         &kp R         &kp T                      &kp Y                         &kp U         &kp I         &kp O        &kp P
-                        &hml LGUI A  &hml LALT S  &hml LCTRL D  &kp F         &hml LS(LA(LC(LGUI))) G    &hmr RS(RA(RC(RGUI))) H       &hmr RSHFT J  &hmr RCTRL K  &hmr RALT L  &hmr RGUI SEMI
-            &kp BSLH    &kp Z        &kp X        &kp C         &kp V         &kp B                      &kp N                         &kp M         &kp COMMA     &kp DOT      &kp FSLH        &kp SQT
-                                                   &lt NUM TAB  &lt NAV SPACE &kp LSHFT                   &lt MED ESC                   &lt SYM ENTER &kp BSPC
+          &kp Q        &kp W        &kp E         &kp R          &kp T                      &kp Y                    &kp U          &kp I         &kp O        &kp P
+          &hml LGUI A  &hml LALT S  &hml LCTRL D  &kp F          &hml LS(LA(LC(LGUI))) G    &hmr RS(RA(RC(RGUI))) H  &hmr RSHFT J   &hmr RCTRL K  &hmr RALT L  &hmr RGUI SEMI
+&kp BSLH  &kp Z        &kp X        &kp C         &kp V          &kp B                      &kp N                    &kp M          &kp COMMA     &kp DOT      &kp FSLH        &kp SQT
+                                    &lt NUM TAB   &lt NAV SPACE  &kp LSHFT                  &lt MED ESC              &lt SYM ENTER  &kp BSPC
             >;
         };
 
@@ -281,10 +296,10 @@
         nav_layer {
             label = "NAV";
             bindings = <
-                   &none      &none      &none       &kp LG(A)   &none                      &none       &kp BSPC    &kp DEL       &none        &none
-                   &kp LGUI   &kp LALT   &kp LCTRL   &kp LSHFT   &kp LS(LA(LC(LGUI)))      &none       &kp LEFT    &kp DOWN      &kp UP       &kp RIGHT
-            &none  &kp LG(Z)  &kp LG(X)  &kp LG(C)   &kp LG(V)   &kp LG(LS(Z))             &none       &kp HOME    &kp PG_DN     &kp PG_UP    &kp END      &none
-                                          &none       &none        &none                     &kp ESC     &kp ENTER   &kp BSPC
+       &none      &none      &none      &kp LG(A)  &none                   &none    &kp BSPC   &kp DEL    &none      &none
+       &kp LGUI   &kp LALT   &kp LCTRL  &kp LSHFT  &kp LS(LA(LC(LGUI)))    &none    &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT
+&none  &kp LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)  &kp LG(LS(Z))           &none    &kp HOME   &kp PG_DN  &kp PG_UP  &kp END    &none
+                             &none      &none      &none                   &kp ESC  &kp ENTER  &kp BSPC
             >;
         };
 
@@ -300,10 +315,10 @@
         num_layer {
             label = "NUM";
             bindings = <
-                     &kp N1     &kp N2     &kp N3      &kp N4      &kp N5              &kp N6    &kp N7     &kp N8      &kp N9      &kp N0
-                     &kp LGUI   &kp LALT   &kp LCTRL   &kp LSHFT   &kp F11             &kp F12   &kp MINUS  &kp PLUS    &kp EQUAL   &kp ASTRK
-            &kp BSLH &kp F1     &kp F2     &kp F3      &kp F4      &kp F5              &kp F6    &kp F7     &kp F8      &kp F9      &kp F10     &kp FSLH
-                                            &none       &none       &none               &kp DOT   &kp COMMA  &kp BSPC
+          &kp N1    &kp N2    &kp N3     &kp N4     &kp N5     &kp N6   &kp N7     &kp N8    &kp N9     &kp N0
+          &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &kp F11    &kp F12  &kp MINUS  &kp PLUS  &kp EQUAL  &kp ASTRK
+&kp BSLH  &kp F1    &kp F2    &kp F3     &kp F4     &kp F5     &kp F6   &kp F7     &kp F8    &kp F9     &kp F10    &kp FSLH
+                              &none      &none      &none      &kp DOT  &kp COMMA  &kp BSPC
             >;
         };
 
@@ -317,10 +332,10 @@
         med_layer {
             label = "MED";
             bindings = <
-                   &none      &mkp LCLK        &mmv MOVE_UP    &mkp RCLK        &msc SCRL_LEFT      &kp PSCRN    &none          &kp C_BRI_DN  &kp C_BRI_UP &none
-                   &none      &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &msc SCRL_RIGHT     &none        &kp C_PREV     &kp C_VOL_DN  &kp C_VOL_UP &kp C_NEXT
-            &none  &none      &none            &none           &none            &none               &bt BT_CLR   &bt BT_SEL 0   &bt BT_SEL 1  &bt BT_SEL 2 &bt BT_SEL 3  &none
-                                               &mkp MCLK       &msc SCRL_DOWN  &msc SCRL_UP        &none        &kp C_PP       &kp C_MUTE
+       &none  &mkp LCLK       &mmv MOVE_UP    &mkp RCLK        &msc SCRL_LEFT     &kp PSCRN   &none         &kp C_BRI_DN  &kp C_BRI_UP  &none
+       &none  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &msc SCRL_RIGHT    &none       &kp C_PREV    &kp C_VOL_DN  &kp C_VOL_UP  &kp C_NEXT
+&none  &none  &none           &none           &none            &none              &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &none
+                              &mkp MCLK       &msc SCRL_DOWN   &msc SCRL_UP       &none       &kp C_PP      &kp C_MUTE
             >;
         };
 
@@ -336,10 +351,10 @@
         sym_layer {
             label = "SYM";
             bindings = <
-                     &kp EXCL   &kp AT     &kp HASH    &kp DLLR      &kp PRCNT          &kp CARET    &kp AMPS    &kp ASTRK      &kp LPAR      &kp RPAR
-                     &kp TILDE  &none      &none       &kp QMARK     &kp LBKT           &kp RBKT     &kp PIPE    &kp LT         &kp GT        &kp SEMI
-            &kp BSLH &kp GRAVE  &none      &kp LT      &kp GT        &kp LBRC           &kp RBRC     &kp COLON   &kp COMMA      &kp DOT       &kp FSLH     &kp SQT
-                                            &kp MINUS   &kp PLUS      &kp EQUAL          &none        &none       &none
+          &kp EXCL   &kp AT  &kp HASH   &kp DLLR   &kp PRCNT    &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR
+          &kp TILDE  &none   &none      &kp QMARK  &kp LBKT     &kp RBKT   &kp PIPE   &kp LT     &kp GT    &kp SEMI
+&kp BSLH  &kp GRAVE  &none   &kp LT     &kp GT     &kp LBRC     &kp RBRC   &kp COLON  &kp COMMA  &kp DOT   &kp FSLH  &kp SQT
+                             &kp MINUS  &kp PLUS   &kp EQUAL    &none      &none      &none
             >;
         };
     };

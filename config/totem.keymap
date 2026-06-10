@@ -61,9 +61,9 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "balanced";
-            tapping-term-ms = <200>;
+            tapping-term-ms = <280>;
             quick-tap-ms = <175>;
-            require-prior-idle-ms = <50>;
+            require-prior-idle-ms = <150>;
             bindings = <&kp>, <&kp>;
 
             hold-trigger-key-positions = <KEYS_R THUMBS>;
@@ -96,7 +96,8 @@
         caps {
             bindings = <&kp CAPSLOCK>;
             key-positions = <0 9>;
-            timeout-ms = <100>;
+            timeout-ms = <50>;
+            require-prior-idle-ms = <150>;
         };
 
         // V + M → _  (underscore)
@@ -105,6 +106,7 @@
             bindings = <&kp UNDERSCORE>;
             key-positions = <24 27>;
             timeout-ms = <50>;
+            require-prior-idle-ms = <100>;
         };
 
         // Z + / → Caps Word
@@ -113,6 +115,7 @@
             bindings = <&caps_word>;
             key-positions = <21 30>;
             timeout-ms = <50>;
+            require-prior-idle-ms = <150>;
         };
 
         // T + Y → =>  (fat arrow)
@@ -121,6 +124,7 @@
             bindings = <&fat_arrow>;
             key-positions = <4 5>;
             timeout-ms = <30>;
+            require-prior-idle-ms = <150>;
         };
 
         // B + N → ->  (thin arrow)
@@ -129,6 +133,7 @@
             bindings = <&thin_arrow>;
             key-positions = <25 26>;
             timeout-ms = <30>;
+            require-prior-idle-ms = <150>;
         };
 
         // R + U → -  (minus/dash)
@@ -137,6 +142,7 @@
             bindings = <&kp MINUS>;
             key-positions = <3 6>;
             timeout-ms = <50>;
+            require-prior-idle-ms = <150>;
         };
 
         // O + P → [ (= Х в русской раскладке)
@@ -145,6 +151,7 @@
             bindings = <&kp LBKT>;
             key-positions = <8 9>;
             timeout-ms = <50>;
+            require-prior-idle-ms = <150>;
         };
 
         // P + ' → ] (= Ъ в русской раскладке)
@@ -153,6 +160,7 @@
             bindings = <&kp RBKT>;
             key-positions = <9 31>;
             timeout-ms = <50>;
+            require-prior-idle-ms = <150>;
         };
 
         // Tab + Space → Cmd+Tab (переключение приложений)
@@ -161,6 +169,7 @@
             bindings = <&kp LG(TAB)>;
             key-positions = <32 33>;
             timeout-ms = <50>;
+            require-prior-idle-ms = <150>;
         };
 
         // \ + Z → Cmd+` (переключение окон внутри приложения)
@@ -169,6 +178,7 @@
             bindings = <&kp LG(GRAVE)>;
             key-positions = <20 21>;
             timeout-ms = <50>;
+            require-prior-idle-ms = <150>;
         };
 
         // Q + W → Cmd+Shift+4 (скриншот области)
@@ -177,6 +187,7 @@
             bindings = <&kp LG(LS(N4))>;
             key-positions = <0 1>;
             timeout-ms = <50>;
+            require-prior-idle-ms = <150>;
         };
 
         // ── Python / LeetCode combos ──
@@ -186,6 +197,7 @@
             bindings = <&double_eq>;
             key-positions = <2 3>;
             timeout-ms = <30>;
+            require-prior-idle-ms = <150>;
         };
 
         // W + E → !=
@@ -194,6 +206,7 @@
             bindings = <&not_eq>;
             key-positions = <1 2>;
             timeout-ms = <30>;
+            require-prior-idle-ms = <150>;
         };
 
         // L + ; → :
@@ -202,6 +215,7 @@
             bindings = <&kp COLON>;
             key-positions = <18 19>;
             timeout-ms = <50>;
+            require-prior-idle-ms = <100>;
         };
 
         // X + C → #  (Python comment + space)
@@ -210,6 +224,7 @@
             bindings = <&hash_space>;
             key-positions = <22 23>;
             timeout-ms = <50>;
+            require-prior-idle-ms = <150>;
         };
     };
 
